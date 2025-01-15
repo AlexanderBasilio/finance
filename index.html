@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresos y Egresos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Ingresos y Egresos de <span id="userName"></span></h1>
+
+    <div class="tables-container">
+        <!-- Ingresos Table -->
+        <table id="ingresosTable">
+            <thead>
+                <tr>
+                    <th colspan="4">Ingresos</th>
+                </tr>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Mes</th>
+                    <th>Descripción</th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="date" onchange="updateMonth(this)"></td>
+                    <td class="month-cell"></td>
+                    <td><input type="text" placeholder="Descripción"></td>
+                    <td><input type="number" placeholder="Monto"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="addRow('ingresosTable')">Agregar Ingreso</button>
+
+        <!-- Egresos Table -->
+        <table id="egresosTable">
+            <thead>
+                <tr>
+                    <th colspan="4">Egresos</th>
+                </tr>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Mes</th>
+                    <th>Descripción</th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="date" onchange="updateMonth(this)"></td>
+                    <td class="month-cell"></td>
+                    <td><input type="text" placeholder="Descripción"></td>
+                    <td><input type="number" placeholder="Monto"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="addRow('egresosTable')">Agregar Egreso</button>
+    </div>
+
+    <!-- Summary Table -->
+    <table class="summary-table">
+        <thead>
+            <tr>
+                <th>Enero</th>
+                <th>Febrero</th>
+                <th>Marzo</th>
+                <th>Abril</th>
+                <th>Mayo</th>
+                <th>Junio</th>
+                <th>Julio</th>
+                <th>Agosto</th>
+                <th>Septiembre</th>
+                <th>Octubre</th>
+                <th>Noviembre</th>
+                <th>Diciembre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="ingresosTotalesRow">
+                <!-- Total ingresos per month will be filled here -->
+            </tr>
+            <tr id="egresosTotalesRow">
+                <!-- Total egresos per month will be filled here -->
+            </tr>
+            <tr id="saldoRow">
+                <!-- Saldo per month will be filled here -->
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="calculateTotals()">Resultado</button>
+
+    <script src="script.js">
+
+    </script>
+</body>
+</html>
